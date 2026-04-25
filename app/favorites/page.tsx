@@ -9,7 +9,7 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function FavoritesPage() {
-  const [favorites, setFavorites, isHydrated] = useLocalStorage<string[]>("devhub-favorites", []);
+  const [favorites, , isHydrated] = useLocalStorage<string[]>("devhub-favorites", []);
   const [favoriteTools, setFavoriteTools] = useState<typeof TOOLS>([]);
   const { t } = useTranslation();
 

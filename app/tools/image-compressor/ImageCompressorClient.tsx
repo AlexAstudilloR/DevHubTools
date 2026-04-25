@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import { ToolLayout } from "@/components/ToolLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Upload, Download, ImageIcon, FileWarning } from "lucide-react";
+import { Upload, Download, ImageIcon } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function ImageCompressorClient() {

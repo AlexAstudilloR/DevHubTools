@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { ToolLayout } from "@/components/ToolLayout";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Calculator } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function BmiCalculatorClient() {

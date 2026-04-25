@@ -19,7 +19,7 @@ export default function Base64Client() {
       } else {
         setOutput(atob(val));
       }
-    } catch (e) {
+    } catch {
       setOutput("Error: Entrada no válida");
     }
   };

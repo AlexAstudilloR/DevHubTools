@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useToast } from "@/components/ui/use-toast";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface UuidHistoryItem {
   uuids: string[];
