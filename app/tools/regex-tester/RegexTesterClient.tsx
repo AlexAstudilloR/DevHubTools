@@ -27,7 +27,7 @@ export default function RegexTesterClient() {
       const m = Array.from(text.matchAll(regex));
       setMatches(m);
       setError(null);
-    } catch (e) {
+    } catch {
       setError(t('status.invalid_regex'));
       setMatches([]);
     }

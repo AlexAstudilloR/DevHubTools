@@ -21,7 +21,7 @@ export default function UrlEncoderClient() {
       } else {
         setOutput(decodeURIComponent(val));
       }
-    } catch (e) {
+    } catch {
       setOutput("Error: Entrada no válida");
     }
   };

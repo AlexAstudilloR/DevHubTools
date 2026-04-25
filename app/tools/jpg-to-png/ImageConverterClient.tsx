@@ -83,7 +83,7 @@ export default function ImageConverterClient() {
                 <Button 
                   key={f}
                   variant={format === f ? "default" : "outline"}
-                  onClick={() => setFormat(f as any)}
+                  onClick={() => setFormat(f as "png" | "jpeg" | "webp")}
                   className="uppercase"
                 >
                   {f === "jpeg" ? "jpg" : f}
