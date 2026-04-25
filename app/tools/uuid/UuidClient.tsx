@@ -55,6 +55,7 @@ export function UuidClient() {
   const [results, setResults] = useState<string[]>([]);
   
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [history, setHistory, isHydrated] = useLocalStorage<UuidHistoryItem[]>("history-uuid", []);
 
   const generate = async (saveToHistory = true) => {
@@ -74,10 +75,6 @@ export function UuidClient() {
         return;
       }
       
-      // Si piden múltiples v5 con el mismo namespace y nombre, serán idénticos.
-      // Para bulk v5, iteramos el nombre añadiendo un índice si es más de 1 para que sean distintos, o los dejamos igual.
-      // Generalmente v5 es determinístico, así que generaremos 1 y lo clonaremos, o si prefieren distintos, agregamos índice.
-      // Lo dejaremos determinístico: todos serán iguales si es bulk, pero alertaremos.
       const baseUuid = await generateUUIDv5(namespace, nameInput);
       for (let i = 0; i < count; i++) {
         generated.push(count > 1 ? await generateUUIDv5(namespace, `${nameInput}-${i}`) : baseUuid);
@@ -119,8 +116,8 @@ export function UuidClient() {
 
   return (
     <ToolLayout<UuidHistoryItem>
-      title="Generador UUID/GUID"
-      description="Crea identificadores únicos v4 (aleatorios) o v5 (basados en nombre)."
+      title={t('tool.uuid.name')}
+      description={t('tool.uuid.desc')}
       toolId="uuid"
       history={isHydrated ? history : []}
       onCopy={handleCopy}
@@ -144,7 +141,7 @@ export function UuidClient() {
           <CardContent className="p-6 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium">Versión</label>
+                <label className="text-sm font-medium">{t('label.version')}</label>
                 <div className="flex gap-2">
                   <Button 
                     variant={version === 4 ? "default" : "outline"}
@@ -164,7 +161,7 @@ export function UuidClient() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium">Cantidad a generar (1-100)</label>
+                <label className="text-sm font-medium">{t('label.amount')} (1-100)</label>
                 <Input 
                   type="number" 
                   min={1} 
@@ -203,7 +200,7 @@ export function UuidClient() {
             )}
             
             <Button onClick={() => generate()} className="w-full">
-              Generar UUID(s)
+              {t('label.generate')} UUID(s)
             </Button>
           </CardContent>
         </Card>
