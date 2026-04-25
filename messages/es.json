@@ -1,0 +1,61 @@
+{
+  "Index": {
+    "title": "Bienvenido a DevTools Hub",
+    "description": "Una colección de herramientas esenciales para desarrolladores, todo ejecutándose directamente en tu navegador sin enviar datos a ningún servidor.",
+    "openTool": "Abrir herramienta"
+  },
+  "Tools": {
+    "color-palette": { "name": "Paleta de Colores", "description": "Genera variantes análogas y complementarias." },
+    "jwt": { "name": "JWT Secret", "description": "Genera claves seguras para JWT." },
+    "uuid": { "name": "UUID/GUID", "description": "Genera identificadores únicos (v4/v5)." },
+    "gradients": { "name": "Gradientes CSS", "description": "Crea fondos con gradientes lineales y radiales." },
+    "shadows": { "name": "Sombras CSS", "description": "Diseña sombras y cópialas como CSS." },
+    "grid": { "name": "Grid CSS", "description": "Genera layouts con CSS Grid visualmente." },
+    "json": { "name": "JSON Formatter", "description": "Formatea, valida y minifica JSON." },
+    "lorem": { "name": "Lorem Ipsum", "description": "Genera texto de relleno en segundos." },
+    "password": { "name": "Contraseñas", "description": "Genera contraseñas fuertes y seguras." },
+    "css-minifier": { "name": "CSS Minifier", "description": "Reduce el tamaño de tu código CSS." },
+    "units": { "name": "Conversor Unidades", "description": "Convierte entre px, rem y em." },
+    "contrast": { "name": "Contraste WCAG", "description": "Verifica el contraste entre colores." },
+    "word-counter": { "name": "Contador de Palabras", "description": "Cuenta palabras, caracteres, frases y tiempo de lectura." },
+    "character-counter": { "name": "Contador de Caracteres", "description": "Cuenta caracteres con y sin espacios." },
+    "case-converter": { "name": "Conversor de Mayúsculas", "description": "Convierte texto a MAYÚSCULAS, minúsculas, Tipo Título, etc." },
+    "slug-generator": { "name": "Generador de Slugs", "description": "Genera slugs amigables para SEO a partir de cualquier texto." },
+    "remove-duplicate-lines": { "name": "Eliminar Duplicados", "description": "Elimina fácilmente líneas duplicadas de un texto." },
+    "markdown-previewer": { "name": "Previsualizador Markdown", "description": "Escribe y previsualiza Markdown en tiempo real." }
+  },
+  "Sidebar": {
+    "title": "DevTools Hub",
+    "favorites": "Mis Favoritos",
+    "home": "Inicio"
+  },
+  "Favorites": {
+    "title": "Mis Favoritos",
+    "description": "Tus herramientas más utilizadas, siempre a mano.",
+    "emptyState": "Aún no tienes herramientas favoritas.",
+    "emptyStateDesc": "Haz clic en el icono de estrella en cualquier herramienta para añadirla a tus favoritos.",
+    "exploreTools": "Explorar herramientas"
+  },
+  "Categories": {
+    "all": "Todas",
+    "css": "CSS & Diseño",
+    "dev": "Desarrollo",
+    "text": "Texto",
+    "security": "Seguridad",
+    "utility": "Utilidad"
+  },
+  "Legal": {
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cookies": "Política de Cookies",
+    "privacyContent": "Recopilamos información para brindar mejores servicios a todos nuestros usuarios. No vendemos sus datos personales a terceros. Utilizamos localStorage para guardar sus preferencias y herramientas favoritas localmente en su dispositivo.",
+    "termsContent": "Al usar DevTools Hub, usted acepta estos términos. Las herramientas se proporcionan 'tal cual' sin garantía de ningún tipo. Usted es responsable de cómo utiliza los datos generados.",
+    "cookiesContent": "Utilizamos cookies y tecnologías similares (como localStorage) para almacenar sus preferencias y favoritos. También utilizamos cookies de terceros (como Google Analytics y Google AdSense) para analizar el tráfico y mostrar anuncios personalizados."
+  },
+  "Cookies": {
+    "bannerText": "Utilizamos cookies propias y de terceros para mejorar tu experiencia y nuestros servicios, así como para mostrarte publicidad personalizada en base a tus hábitos de navegación.",
+    "accept": "Aceptar todas",
+    "reject": "Rechazar opcionales",
+    "configure": "Configurar"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "Index": {
+    "title": "Welcome to DevTools Hub",
+    "description": "A collection of essential tools for developers, all running directly in your browser without sending data to any server.",
+    "openTool": "Open tool"
+  },
+  "Tools": {
+    "color-palette": { "name": "Color Palette", "description": "Generate analogous and complementary variants." },
+    "jwt": { "name": "JWT Secret", "description": "Generate secure keys for JWT." },
+    "uuid": { "name": "UUID/GUID", "description": "Generate unique identifiers (v4/v5)." },
+    "gradients": { "name": "CSS Gradients", "description": "Create backgrounds with linear and radial gradients." },
+    "shadows": { "name": "CSS Shadows", "description": "Design shadows and copy them as CSS." },
+    "grid": { "name": "CSS Grid", "description": "Generate layouts with CSS Grid visually." },
+    "json": { "name": "JSON Formatter", "description": "Format, validate, and minify JSON." },
+    "lorem": { "name": "Lorem Ipsum", "description": "Generate dummy text in seconds." },
+    "password": { "name": "Passwords", "description": "Generate strong and secure passwords." },
+    "css-minifier": { "name": "CSS Minifier", "description": "Reduce the size of your CSS code." },
+    "units": { "name": "Unit Converter", "description": "Convert between px, rem, and em." },
+    "contrast": { "name": "WCAG Contrast", "description": "Check the contrast between colors." },
+    "word-counter": { "name": "Word Counter", "description": "Count words, characters, sentences, and reading time." },
+    "character-counter": { "name": "Character Counter", "description": "Count characters with and without spaces." },
+    "case-converter": { "name": "Case Converter", "description": "Convert text to UPPERCASE, lowercase, Title Case, etc." },
+    "slug-generator": { "name": "Slug Generator", "description": "Generate SEO-friendly URL slugs from any text." },
+    "remove-duplicate-lines": { "name": "Remove Duplicates", "description": "Easily remove duplicate lines from a text." },
+    "markdown-previewer": { "name": "Markdown Previewer", "description": "Write and preview Markdown in real-time." }
+  },
+  "Sidebar": {
+    "title": "DevTools Hub",
+    "favorites": "My Favorites",
+    "home": "Home"
+  },
+  "Favorites": {
+    "title": "My Favorites",
+    "description": "Your most used tools, always at hand.",
+    "emptyState": "You don't have any favorite tools yet.",
+    "emptyStateDesc": "Click the star icon on any tool to add it to your favorites.",
+    "exploreTools": "Explore tools"
+  },
+  "Categories": {
+    "all": "All",
+    "css": "CSS & Design",
+    "dev": "Development",
+    "text": "Text",
+    "security": "Security",
+    "utility": "Utility"
+  },
+  "Legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookies Policy",
+    "privacyContent": "We collect information to provide better services to all our users. We do not sell your personal data to third parties. We use localStorage to save your preferences and favorite tools locally on your device.",
+    "termsContent": "By using DevTools Hub, you agree to these terms. The tools are provided 'as is' without warranty of any kind. You are responsible for how you use the generated data.",
+    "cookiesContent": "We use cookies and similar technologies (like localStorage) to store your preferences and favorites. We also use third-party cookies (like Google Analytics and Google AdSense) to analyze traffic and show personalized ads."
+  },
+  "Cookies": {
+    "bannerText": "We use our own and third-party cookies to improve your experience and our services, as well as to show you personalized advertising based on your browsing habits.",
+    "accept": "Accept all",
+    "reject": "Reject non-essential",
+    "configure": "Configure"
+  }
+}
