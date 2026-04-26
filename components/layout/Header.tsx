@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import { Link } from "@/lib/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
 import { CategoryNav } from "./CategoryNav";
 import { Terminal } from "lucide-react";
+import { AdPlaceholder } from "@/components/ads/AdPlaceholder";
 
 export function Header() {
   const t = useTranslations("Sidebar");

@@ -13,6 +13,7 @@ import { AdStickyMobileFooter, AdBanner } from "@/components/ads/AdPlaceholders"
 import { constructMetadata } from "@/lib/seo";
 import { GA_TRACKING_ID } from "@/lib/analytics";
 import Script from "next/script";
+import { TranslationProvider } from "@/hooks/useTranslation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,29 +60,31 @@ export default async function RootLayout({
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ToastProvider>
-              <FavoritesProvider>
-                <div className="flex flex-col min-h-screen">
-                  <Header />
-                  <AdBanner className="hidden md:flex" />
-                  <main className="flex-1 bg-muted/20 relative flex flex-col pb-12 md:pb-0">
-                    <div className="flex-1">
-                      {children}
-                    </div>
-                    <Footer />
-                  </main>
-                </div>
-                <CookieBanner />
-                <AdStickyMobileFooter />
-              </FavoritesProvider>
-            </ToastProvider>
-          </ThemeProvider>
+          <TranslationProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <ToastProvider>
+                <FavoritesProvider>
+                  <div className="flex flex-col min-h-screen">
+                    <Header />
+                    <AdBanner className="hidden md:flex" />
+                    <main className="flex-1 bg-muted/20 relative flex flex-col pb-12 md:pb-0">
+                      <div className="flex-1">
+                        {children}
+                      </div>
+                      <Footer />
+                    </main>
+                  </div>
+                  <CookieBanner />
+                  <AdStickyMobileFooter />
+                </FavoritesProvider>
+              </ToastProvider>
+            </ThemeProvider>
+          </TranslationProvider>
         </NextIntlClientProvider>
       </body>
     </html>

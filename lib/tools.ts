@@ -1,8 +1,8 @@
 import { 
   Palette, KeyRound, Hash, Paintbrush, BoxSelect, 
   LayoutGrid, FileJson, Type, ShieldCheck, FileCode2, 
-  Ruler, Contrast, FileText, Text, CaseUpper, Link2, 
-  ListMinus, BookOpen
+  Ruler, Contrast, FileText, Text, Link2, 
+  ListMinus
 } from "lucide-react";
 
 export const TOOLS_DATA = [

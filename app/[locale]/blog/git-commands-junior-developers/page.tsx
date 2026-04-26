@@ -1,7 +1,7 @@
 import { constructMetadata } from "@/lib/seo";
 import { Metadata } from "next";
 import { Link } from "@/lib/navigation";
-import { ArrowLeft, Calendar, Clock, GitBranch } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return constructMetadata({
@@ -126,7 +126,7 @@ git stash pop  # recuperarlos después`}</code></pre>
           <>
             <p>
               Git is the most widely used version control tool in software development.
-              If you're starting your career as a developer, mastering these commands will save you many headaches.
+              If you&apos;re starting your career as a developer, mastering these commands will save you many headaches.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">1. Initial Setup</h2>
@@ -139,7 +139,7 @@ git config --global user.email "you@email.com"`}</code></pre>
             <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm"><code>{`git clone https://github.com/user/repo.git`}</code></pre>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">3. Daily Basic Flow</h2>
-            <p>These are the commands you'll use literally every day:</p>
+            <p>These are the commands you&apos;ll use literally every day:</p>
             <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm"><code>{`# Check the status of your files
 git status
 
