@@ -8,6 +8,7 @@ import { Menu, ChevronLeft, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useFavorites } from "@/context/FavoritesContext";
 import { TOOLS_DATA } from "@/lib/tools";
+import { AdPlaceholder } from "@/components/ads/AdPlaceholder";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
