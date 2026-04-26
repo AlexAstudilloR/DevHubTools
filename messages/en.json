@@ -2,16 +2,39 @@
   "Index": {
     "title": "Welcome to DevTools Hub",
     "description": "A collection of essential tools for developers, all running directly in your browser without sending data to any server.",
-    "openTool": "Open tool"
+    "openTool": "Open tool",
+    "searchPlaceholder": "Search tools...",
+    "noResults": "No tools found matching your criteria.",
+    "clearFilters": "Clear filters"
   },
   "Tools": {
-    "color-palette": { "name": "Color Palette", "description": "Generate analogous and complementary variants." },
-    "jwt": { "name": "JWT Secret", "description": "Generate secure keys for JWT." },
-    "uuid": { "name": "UUID/GUID", "description": "Generate unique identifiers (v4/v5)." },
+    "color-palette": { 
+      "name": "Color Palette", 
+      "description": "Generate analogous and complementary variants.",
+      "whatIsIt": "A color palette is a range of colors used in visual design. This tool helps you find harmonious color combinations based on a base color using mathematical color theory.",
+      "howToUse": "Select a base color using the color picker or enter a HEX/RGB code. The tool will automatically generate complementary, analogous, and monochromatic variations."
+    },
+    "jwt": { 
+      "name": "JWT Secret", 
+      "description": "Generate secure keys for JWT.",
+      "whatIsIt": "JSON Web Tokens (JWT) require a strong secret key for signing to prevent unauthorized access. This tool generates high-entropy strings suitable for HS256, HS384, or HS512 algorithms.",
+      "howToUse": "Select the desired security level or length, and click 'Generate'. You should store this secret securely in your environment variables."
+    },
+    "uuid": { 
+      "name": "UUID/GUID", 
+      "description": "Generate unique identifiers (v4/v5).",
+      "whatIsIt": "A Universally Unique Identifier (UUID) is a 128-bit number used to identify information in computer systems. It is designed to be unique across space and time.",
+      "howToUse": "Choose the version (v4 for random, v5 for namespace-based), specify the quantity, and click generate. You can then copy the results to your clipboard."
+    },
     "gradients": { "name": "CSS Gradients", "description": "Create backgrounds with linear and radial gradients." },
     "shadows": { "name": "CSS Shadows", "description": "Design shadows and copy them as CSS." },
     "grid": { "name": "CSS Grid", "description": "Generate layouts with CSS Grid visually." },
-    "json": { "name": "JSON Formatter", "description": "Format, validate, and minify JSON." },
+    "json": { 
+      "name": "JSON Formatter", 
+      "description": "Format, validate, and minify JSON.",
+      "whatIsIt": "JSON (JavaScript Object Notation) is a lightweight data-interchange format. This tool helps you make JSON data readable (pretty-print) or compact (minify) while ensuring it's valid.",
+      "howToUse": "Paste your JSON code into the editor. Use the 'Format' button to beautify it, 'Minify' to reduce its size, or 'Validate' to check for syntax errors."
+    },
     "lorem": { "name": "Lorem Ipsum", "description": "Generate dummy text in seconds." },
     "password": { "name": "Passwords", "description": "Generate strong and secure passwords." },
     "css-minifier": { "name": "CSS Minifier", "description": "Reduce the size of your CSS code." },
@@ -19,15 +42,21 @@
     "contrast": { "name": "WCAG Contrast", "description": "Check the contrast between colors." },
     "word-counter": { "name": "Word Counter", "description": "Count words, characters, sentences, and reading time." },
     "character-counter": { "name": "Character Counter", "description": "Count characters with and without spaces." },
-    "case-converter": { "name": "Case Converter", "description": "Convert text to UPPERCASE, lowercase, Title Case, etc." },
-    "slug-generator": { "name": "Slug Generator", "description": "Generate SEO-friendly URL slugs from any text." },
-    "remove-duplicate-lines": { "name": "Remove Duplicates", "description": "Easily remove duplicate lines from a text." },
-    "markdown-previewer": { "name": "Markdown Previewer", "description": "Write and preview Markdown in real-time." }
+    "slug-generator": { 
+      "name": "Slug Generator", 
+      "description": "Generate SEO-friendly URL slugs from any text.",
+      "whatIsIt": "A slug is the part of a URL which identifies a particular page on a website in a human-readable format. It is essential for SEO as it helps search engines understand the content of the page.",
+      "howToUse": "Enter your article title or any text in the input field. The tool will automatically convert it to a lowercase, hyphen-separated string. You can customize the separator and remove common stop words."
+    },
+    "remove-duplicate-lines": { "name": "Remove Duplicates", "description": "Easily remove duplicate lines from a text." }
   },
   "Sidebar": {
     "title": "DevTools Hub",
     "favorites": "My Favorites",
-    "home": "Home"
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact",
+    "blog": "Blog"
   },
   "Favorites": {
     "title": "My Favorites",
@@ -38,11 +67,16 @@
   },
   "Categories": {
     "all": "All",
-    "css": "CSS & Design",
-    "dev": "Development",
-    "text": "Text",
+    "css": "Design & Images",
+    "dev": "Programming",
+    "text": "Words & Text",
     "security": "Security",
-    "utility": "Utility"
+    "utility": "Other Tools"
+  },
+  "ToolInfo": {
+    "howToUse": "How to use",
+    "whatIsIt": "What is it for?",
+    "description": "Details"
   },
   "Legal": {
     "privacy": "Privacy Policy",
@@ -57,5 +91,23 @@
     "accept": "Accept all",
     "reject": "Reject non-essential",
     "configure": "Configure"
+  },
+  "About": {
+    "title": "About Us",
+    "welcome": "Welcome to DevTools Hub, your comprehensive destination for web development utilities.",
+    "mission": "Our Mission",
+    "missionDesc": "To provide developers with high-quality, privacy-focused tools that run entirely in the browser. No data is ever sent to our servers.",
+    "privacy": "Privacy First",
+    "whyChoose": "Why choose DevTools Hub?",
+    "fast": "Fast & Local:",
+    "fastDesc": "Tools execute in your browser using JavaScript, ensuring maximum speed.",
+    "offline": "Offline Ready:",
+    "offlineDesc": "Many tools can work even when you are not connected to the internet.",
+    "openSource": "Open Source Spirit:",
+    "openSourceDesc": "We believe in transparency and developer-centric design.",
+    "responsive": "Responsive Design:",
+    "responsiveDesc": "Use our tools on your desktop, tablet, or smartphone.",
+    "tech": "Technology Stack",
+    "techDesc": "Built with the latest web technologies including Next.js, Tailwind CSS, and TypeScript to ensure a smooth and secure experience."
   }
 }

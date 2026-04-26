@@ -1,10 +1,16 @@
-import {notFound} from 'next/navigation';
-import {getRequestConfig} from 'next-intl/server';
+import { getRequestConfig } from 'next-intl/server';
 
 const locales = ['es', 'en'];
+const defaultLocale = 'es';
 
-export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as any)) notFound();
+export default getRequestConfig(async ({ requestLocale }) => {
+  // `requestLocale` is a Promise in next-intl v4
+  let locale = await requestLocale;
+
+  // Fallback to default if locale is invalid or missing
+  if (!locale || !locales.includes(locale)) {
+    locale = defaultLocale;
+  }
 
   return {
     locale,

@@ -2,16 +2,39 @@
   "Index": {
     "title": "Bienvenido a DevTools Hub",
     "description": "Una colección de herramientas esenciales para desarrolladores, todo ejecutándose directamente en tu navegador sin enviar datos a ningún servidor.",
-    "openTool": "Abrir herramienta"
+    "openTool": "Abrir herramienta",
+    "searchPlaceholder": "Buscar herramientas...",
+    "noResults": "No se encontraron herramientas con esos criterios.",
+    "clearFilters": "Limpiar filtros"
   },
   "Tools": {
-    "color-palette": { "name": "Paleta de Colores", "description": "Genera variantes análogas y complementarias." },
-    "jwt": { "name": "JWT Secret", "description": "Genera claves seguras para JWT." },
-    "uuid": { "name": "UUID/GUID", "description": "Genera identificadores únicos (v4/v5)." },
+    "color-palette": { 
+      "name": "Paleta de Colores", 
+      "description": "Genera variantes análogas y complementarias.",
+      "whatIsIt": "Una paleta de colores es una gama de colores utilizada en diseño visual. Esta herramienta te ayuda a encontrar combinaciones armoniosas basadas en un color base utilizando la teoría matemática del color.",
+      "howToUse": "Selecciona un color base usando el selector o ingresa un código HEX/RGB. La herramienta generará automáticamente variaciones complementarias, análogas y monocromáticas."
+    },
+    "jwt": { 
+      "name": "Secreto JWT", 
+      "description": "Genera claves seguras para JWT.",
+      "whatIsIt": "Los JSON Web Tokens (JWT) requieren una clave secreta fuerte para la firma y así prevenir accesos no autorizados. Esta herramienta genera cadenas de alta entropía adecuadas para algoritmos HS256, HS384 o HS512.",
+      "howToUse": "Selecciona el nivel de seguridad o longitud deseada y haz clic en 'Generar'. Debes guardar este secreto de forma segura en tus variables de entorno."
+    },
+    "uuid": { 
+      "name": "UUID/GUID", 
+      "description": "Genera identificadores únicos (v4/v5).",
+      "whatIsIt": "Un Identificador Único Universal (UUID) es un número de 128 bits utilizado para identificar información en sistemas informáticos. Está diseñado para ser único en el espacio y el tiempo.",
+      "howToUse": "Elige la versión (v4 para aleatorio, v5 para basado en espacio de nombres), especifica la cantidad y haz clic en generar. Luego puedes copiar los resultados al portapapeles."
+    },
     "gradients": { "name": "Gradientes CSS", "description": "Crea fondos con gradientes lineales y radiales." },
     "shadows": { "name": "Sombras CSS", "description": "Diseña sombras y cópialas como CSS." },
     "grid": { "name": "Grid CSS", "description": "Genera layouts con CSS Grid visualmente." },
-    "json": { "name": "JSON Formatter", "description": "Formatea, valida y minifica JSON." },
+    "json": { 
+      "name": "Formateador JSON", 
+      "description": "Formatea, valida y minifica JSON.",
+      "whatIsIt": "JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos. Esta herramienta te ayuda a que los datos JSON sean legibles o compactos mientras asegura que sean válidos.",
+      "howToUse": "Pega tu código JSON en el editor. Usa el botón 'Formatear' para embellecerlo, 'Minificar' para reducir su tamaño o 'Validar' para buscar errores de sintaxis."
+    },
     "lorem": { "name": "Lorem Ipsum", "description": "Genera texto de relleno en segundos." },
     "password": { "name": "Contraseñas", "description": "Genera contraseñas fuertes y seguras." },
     "css-minifier": { "name": "CSS Minifier", "description": "Reduce el tamaño de tu código CSS." },
@@ -19,30 +42,41 @@
     "contrast": { "name": "Contraste WCAG", "description": "Verifica el contraste entre colores." },
     "word-counter": { "name": "Contador de Palabras", "description": "Cuenta palabras, caracteres, frases y tiempo de lectura." },
     "character-counter": { "name": "Contador de Caracteres", "description": "Cuenta caracteres con y sin espacios." },
-    "case-converter": { "name": "Conversor de Mayúsculas", "description": "Convierte texto a MAYÚSCULAS, minúsculas, Tipo Título, etc." },
-    "slug-generator": { "name": "Generador de Slugs", "description": "Genera slugs amigables para SEO a partir de cualquier texto." },
-    "remove-duplicate-lines": { "name": "Eliminar Duplicados", "description": "Elimina fácilmente líneas duplicadas de un texto." },
-    "markdown-previewer": { "name": "Previsualizador Markdown", "description": "Escribe y previsualiza Markdown en tiempo real." }
+    "slug-generator": { 
+      "name": "Slug Generator", 
+      "description": "Genera slugs de URL amigables para SEO a partir de cualquier texto.",
+      "whatIsIt": "Un slug es la parte de una URL que identifica una página específica en un sitio web en un formato legible para los humanos. Es esencial para el SEO, ya que ayuda a los motores de búsqueda a comprender el contenido de la página.",
+      "howToUse": "Ingresa el título de tu artículo o cualquier texto en el campo de entrada. La herramienta lo convertirá automáticamente en una cadena separada por guiones y en minúsculas. Puedes personalizar el separador y eliminar palabras comunes."
+    },
+    "remove-duplicate-lines": { "name": "Eliminar Duplicados", "description": "Elimina fácilmente líneas duplicadas de un texto." }
   },
   "Sidebar": {
     "title": "DevTools Hub",
     "favorites": "Mis Favoritos",
-    "home": "Inicio"
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto",
+    "blog": "Blog"
   },
   "Favorites": {
     "title": "Mis Favoritos",
     "description": "Tus herramientas más utilizadas, siempre a mano.",
     "emptyState": "Aún no tienes herramientas favoritas.",
-    "emptyStateDesc": "Haz clic en el icono de estrella en cualquier herramienta para añadirla a tus favoritos.",
+    "emptyStateDesc": "Haz clic en el icono de estrella de cualquier herramienta para añadirla a tus favoritos.",
     "exploreTools": "Explorar herramientas"
   },
   "Categories": {
     "all": "Todas",
-    "css": "CSS & Diseño",
-    "dev": "Desarrollo",
-    "text": "Texto",
+    "css": "Diseño e Imágenes",
+    "dev": "Programación",
+    "text": "Palabras y Texto",
     "security": "Seguridad",
-    "utility": "Utilidad"
+    "utility": "Otras Herramientas"
+  },
+  "ToolInfo": {
+    "howToUse": "Cómo usar",
+    "whatIsIt": "¿Para qué sirve?",
+    "description": "Detalles"
   },
   "Legal": {
     "privacy": "Política de Privacidad",
@@ -57,5 +91,23 @@
     "accept": "Aceptar todas",
     "reject": "Rechazar opcionales",
     "configure": "Configurar"
+  },
+  "About": {
+    "title": "Sobre Nosotros",
+    "welcome": "Bienvenido a DevTools Hub, tu destino integral para utilidades de desarrollo web.",
+    "mission": "Nuestra Misión",
+    "missionDesc": "Proporcionar a los desarrolladores herramientas de alta calidad y enfocadas en la privacidad que se ejecutan completamente en el navegador. No se envía ningún dato a nuestros servidores.",
+    "privacy": "Privacidad Ante Todo",
+    "whyChoose": "¿Por qué elegir DevTools Hub?",
+    "fast": "Rápido y Local:",
+    "fastDesc": "Las herramientas se ejecutan en tu navegador usando JavaScript, garantizando la máxima velocidad.",
+    "offline": "Listo para usar sin conexión:",
+    "offlineDesc": "Muchas herramientas pueden funcionar incluso cuando no estás conectado a internet.",
+    "openSource": "Espíritu de Código Abierto:",
+    "openSourceDesc": "Creemos en la transparencia y en el diseño centrado en el desarrollador.",
+    "responsive": "Diseño Responsivo:",
+    "responsiveDesc": "Usa nuestras herramientas en tu escritorio, tableta o smartphone.",
+    "tech": "Stack Tecnológico",
+    "techDesc": "Construido con las últimas tecnologías web, incluyendo Next.js, Tailwind CSS y TypeScript para garantizar una experiencia fluida y segura."
   }
 }

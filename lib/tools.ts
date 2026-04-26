@@ -22,8 +22,6 @@ export const TOOLS_DATA = [
   // New Text Tools
   { id: "word-counter", category: "text", href: "/tools/word-counter", icon: FileText },
   { id: "character-counter", category: "text", href: "/tools/character-counter", icon: Text },
-  { id: "case-converter", category: "text", href: "/tools/case-converter", icon: CaseUpper },
   { id: "slug-generator", category: "text", href: "/tools/slug-generator", icon: Link2 },
   { id: "remove-duplicate-lines", category: "text", href: "/tools/remove-duplicate-lines", icon: ListMinus },
-  { id: "markdown-previewer", category: "text", href: "/tools/markdown-previewer", icon: BookOpen },
 ];
