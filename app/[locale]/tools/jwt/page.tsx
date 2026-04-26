@@ -2,7 +2,7 @@ import { constructMetadata } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { JwtClient } from "./JwtClient";
-
+import { ToolDocumentation } from '@/components/layout/ToolDocumentation';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'Tools' });
@@ -15,5 +15,10 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 export default function JwtPage() {
-  return <JwtClient />;
+  return (
+    <div className="container mx-auto px-4">
+      <JwtClient />
+      <ToolDocumentation toolId="jwt" />
+    </div>
+  );
 }

@@ -2,6 +2,7 @@ import { constructMetadata } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 import { CaseConverterClient } from './CaseConverterClient';
+import { ToolDocumentation } from '@/components/layout/ToolDocumentation';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'Tools' });
@@ -14,5 +15,10 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 export default function CaseConverterPage() {
-  return <CaseConverterClient />;
+  return (
+    <div className="container mx-auto px-4">
+      <CaseConverterClient />
+      <ToolDocumentation toolId="case-converter" />
+    </div>
+  );
 }
