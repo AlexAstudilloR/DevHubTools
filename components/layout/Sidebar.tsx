@@ -20,7 +20,7 @@ export function Sidebar() {
 
   return (
     <aside className={cn(
-      "border-r bg-card transition-all duration-300 flex flex-col",
+      "border-r bg-card transition-all duration-300 flex flex-col h-full",
       collapsed ? "w-[80px]" : "w-[280px]"
     )}>
       <div className="flex h-16 items-center justify-between px-4 border-b">
@@ -86,6 +86,11 @@ export function Sidebar() {
           })}
         </nav>
       </div>
+      {!collapsed && (
+        <div className="p-4 border-t">
+          <AdPlaceholder position="sidebar" />
+        </div>
+      )}
     </aside>
   );
 }

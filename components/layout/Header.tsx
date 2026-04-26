@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import { Link } from "@/lib/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -25,8 +28,12 @@ export function Header() {
           <div className="flex items-center space-x-1 sm:space-x-3">
             <LanguageSwitcher />
             <ThemeToggle />
+            <LocaleSwitcher />
           </div>
         </div>
+      </div>
+      <div className="px-6 hidden lg:block">
+        <AdPlaceholder position="header" className="h-[60px] max-w-full my-2" />
       </div>
     </header>
   );
