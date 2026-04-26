@@ -9,11 +9,9 @@ import { ChevronDown, Menu, X, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const categories = [
-  { id: "dev", icon: null },
-  { id: "css", icon: null },
-  { id: "text", icon: null },
-  { id: "security", icon: null },
-  { id: "utility", icon: null },
+  { id: "dev", icon: null, subCategories: ["dev", "security"] },
+  { id: "css", icon: null, subCategories: ["css"] },
+  { id: "text", icon: null, subCategories: ["text", "utility"] },
 ];
 
 export function CategoryNav() {
@@ -23,45 +21,42 @@ export function CategoryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const toolsByCategory = (catId: string) => 
-    TOOLS_DATA.filter(tool => tool.category === catId);
+  const toolsByBucket = (subCats: string[]) => 
+    TOOLS_DATA.filter(tool => subCats.includes(tool.category));
 
   return (
     <nav className="flex items-center">
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center space-x-1">
-        <Link href="/favorites" className="px-3 py-2 text-sm font-medium hover:text-primary flex items-center gap-1">
-          <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-          {tSidebar("favorites")}
-        </Link>
-        
-        {categories.map((cat) => (
+        {categories.map((bucket) => (
           <div 
-            key={cat.id} 
+            key={bucket.id} 
             className="relative group"
-            onMouseEnter={() => setActiveCategory(cat.id)}
+            onMouseEnter={() => setActiveCategory(bucket.id)}
             onMouseLeave={() => setActiveCategory(null)}
           >
-            <button className="px-3 py-2 text-sm font-medium flex items-center gap-1 hover:text-primary transition-colors">
-              {tCategories(cat.id)}
+            <button className="px-4 py-2 text-sm font-semibold flex items-center gap-1 hover:text-primary transition-colors">
+              {tCategories(bucket.id)}
               <ChevronDown className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
             </button>
             
             <div className={cn(
-              "absolute top-full left-0 w-64 bg-background border rounded-md shadow-lg py-2 z-50 transition-all duration-200 transform origin-top-left",
-              activeCategory === cat.id ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
+              "absolute top-full left-0 w-72 bg-background border rounded-xl shadow-xl py-3 z-50 transition-all duration-200 transform origin-top-left",
+              activeCategory === bucket.id ? "opacity-100 scale-100 visible translate-y-0" : "opacity-0 scale-95 invisible -translate-y-2"
             )}>
               <div className="grid grid-cols-1 gap-1 px-2">
-                {toolsByCategory(cat.id).map((tool) => {
+                {toolsByBucket(bucket.subCategories).map((tool) => {
                   const Icon = tool.icon;
                   return (
                     <Link 
                       key={tool.id} 
                       href={tool.href}
-                      className="flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors"
+                      className="flex items-center gap-3 px-3 py-2.5 text-sm rounded-lg hover:bg-primary/5 hover:text-primary transition-colors group/item"
                     >
-                      <Icon className="h-4 w-4 text-muted-foreground" />
-                      <span>{tTools(`${tool.id}.name`)}</span>
+                      <div className="bg-muted p-1.5 rounded-md group-hover/item:bg-primary/10 transition-colors">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <span className="font-medium">{tTools(`${tool.id}.name`)}</span>
                     </Link>
                   );
                 })}
@@ -70,11 +65,10 @@ export function CategoryNav() {
           </div>
         ))}
 
-        <Link href="/blog" className="px-3 py-2 text-sm font-medium hover:text-primary">
+        <div className="h-4 w-px bg-border mx-2" />
+        
+        <Link href="/blog" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors">
           {tSidebar("blog")}
-        </Link>
-        <Link href="/about" className="px-3 py-2 text-sm font-medium hover:text-primary">
-          {tSidebar("about")}
         </Link>
       </div>
 
@@ -98,22 +92,24 @@ export function CategoryNav() {
               {tSidebar("favorites")}
             </Link>
 
-            {categories.map((cat) => (
-              <div key={cat.id} className="space-y-3">
+            {categories.map((bucket) => (
+              <div key={bucket.id} className="space-y-3">
                 <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
-                  {tCategories(cat.id)}
+                  {tCategories(bucket.id)}
                 </h3>
                 <div className="grid grid-cols-1 gap-2 pl-2">
-                  {toolsByCategory(cat.id).map((tool) => {
+                  {toolsByBucket(bucket.subCategories).map((tool) => {
                     const Icon = tool.icon;
                     return (
                       <Link 
                         key={tool.id} 
                         href={tool.href}
-                        className="flex items-center gap-3 py-2 text-base"
+                        className="flex items-center gap-3 py-2 text-base font-medium"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <Icon className="h-5 w-5 text-muted-foreground" />
+                        <div className="bg-muted p-2 rounded-md">
+                          <Icon className="h-5 w-5" />
+                        </div>
                         <span>{tTools(`${tool.id}.name`)}</span>
                       </Link>
                     );

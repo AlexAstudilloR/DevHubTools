@@ -54,7 +54,7 @@ export default function Home() {
         <div className="relative w-full md:max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input 
-            placeholder="Search tools..." 
+            placeholder={t('searchPlaceholder')} 
             className="pl-9 pr-9" 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -86,9 +86,9 @@ export default function Home() {
 
       {filteredTools.length === 0 ? (
         <div className="py-20 text-center">
-          <p className="text-muted-foreground text-lg">No tools found matching your criteria.</p>
+          <p className="text-muted-foreground text-lg">{t('noResults')}</p>
           <Button variant="link" onClick={() => { setSearchQuery(""); setSelectedCategory("all"); }}>
-            Clear filters
+            {t('clearFilters')}
           </Button>
         </div>
       ) : (

@@ -14,45 +14,44 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 export default function AboutPage() {
-  const t = useTranslations("Sidebar");
+  const t = useTranslations("About");
   const tLegal = useTranslations("Legal");
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-8 text-primary">{t("about")}</h1>
+      <h1 className="text-4xl font-bold mb-8 text-primary">{t("title")}</h1>
       
       <div className="prose dark:prose-invert max-w-none space-y-6 text-lg">
         <p>
-          Welcome to <span className="font-bold text-primary">DevTools Hub</span>, your comprehensive destination for web development utilities.
+          {t("welcome")}
         </p>
         
         <div className="grid md:grid-cols-2 gap-8 my-12">
           <div className="bg-card p-6 rounded-lg border shadow-sm">
-            <h2 className="text-xl font-bold mb-3 text-primary">Our Mission</h2>
+            <h2 className="text-xl font-bold mb-3 text-primary">{t("mission")}</h2>
             <p className="text-muted-foreground">
-              To provide developers with high-quality, privacy-focused tools that run entirely in the browser. 
-              No data is ever sent to our servers.
+              {t("missionDesc")}
             </p>
           </div>
           <div className="bg-card p-6 rounded-lg border shadow-sm">
-            <h2 className="text-xl font-bold mb-3 text-primary">Privacy First</h2>
+            <h2 className="text-xl font-bold mb-3 text-primary">{t("privacy")}</h2>
             <p className="text-muted-foreground">
               {tLegal("privacyContent")}
             </p>
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold mt-12 mb-4">Why choose DevTools Hub?</h2>
-        <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-          <li><strong>Fast & Local:</strong> Tools execute in your browser using JavaScript, ensuring maximum speed.</li>
-          <li><strong>Offline Ready:</strong> Many tools can work even when you are not connected to the internet.</li>
-          <li><strong>Open Source Spirit:</strong> We believe in transparency and developer-centric design.</li>
-          <li><strong>Responsive Design:</strong> Use our tools on your desktop, tablet, or smartphone.</li>
+        <h2 className="text-2xl font-bold mt-12 mb-4">{t("whyChoose")}</h2>
+        <ul className="list-disc pl-6 space-y-4 text-muted-foreground">
+          <li><strong>{t("fast")}</strong> {t("fastDesc")}</li>
+          <li><strong>{t("offline")}</strong> {t("offlineDesc")}</li>
+          <li><strong>{t("openSource")}</strong> {t("openSourceDesc")}</li>
+          <li><strong>{t("responsive")}</strong> {t("responsiveDesc")}</li>
         </ul>
 
-        <h2 className="text-2xl font-bold mt-12 mb-4">Technology Stack</h2>
+        <h2 className="text-2xl font-bold mt-12 mb-4">{t("tech")}</h2>
         <p className="text-muted-foreground">
-          Built with the latest web technologies including Next.js, Tailwind CSS, and TypeScript to ensure a smooth and secure experience.
+          {t("techDesc")}
         </p>
       </div>
     </div>

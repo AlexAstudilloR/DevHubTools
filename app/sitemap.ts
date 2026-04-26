@@ -3,22 +3,29 @@ import { TOOLS_DATA } from '@/lib/tools';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://devhubtools.com';
 
+const BLOG_POSTS = [
+  'git-commands-junior-developers',
+  'rest-api-best-practices',
+  'variable-naming-standards',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const tools = TOOLS_DATA.map(tool => tool.id);
   const staticRoutes = [
-    '', 
-    '/favorites', 
-    '/privacy-policy', 
-    '/cookies-policy', 
+    '',
+    '/favorites',
+    '/privacy-policy',
+    '/cookies-policy',
     '/terms-of-service',
     '/about',
     '/contact',
-    '/blog'
+    '/blog',
   ];
 
   const locales = ['en', 'es'];
 
-  const routes = locales.flatMap((locale) => 
+  // Static pages
+  const routes = locales.flatMap((locale) =>
     staticRoutes.map((route) => ({
       url: `${siteUrl}/${locale}${route}`,
       lastModified: new Date(),
@@ -27,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  // Tool pages
   const toolRoutes = locales.flatMap((locale) =>
     tools.map((tool) => ({
       url: `${siteUrl}/${locale}/tools/${tool}`,
@@ -36,5 +44,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...routes, ...toolRoutes];
+  // Blog posts
+  const blogRoutes = locales.flatMap((locale) =>
+    BLOG_POSTS.map((slug) => ({
+      url: `${siteUrl}/${locale}/blog/${slug}`,
+      lastModified: new Date('2026-04-26'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  );
+
+  return [...routes, ...toolRoutes, ...blogRoutes];
 }

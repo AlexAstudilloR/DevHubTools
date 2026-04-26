@@ -1,15 +1,19 @@
-import {notFound} from 'next/navigation';
-import {getRequestConfig} from 'next-intl/server';
+import { getRequestConfig } from 'next-intl/server';
 
 const locales = ['es', 'en'];
+const defaultLocale = 'es';
 
-export default getRequestConfig(async ({ locale }) => {
-  // Si por alguna razón el locale es undefined, usamos el por defecto
-  // para evitar que la aplicación se rompa con un error 500 o 404 prematuro.
-  const targetLocale = locale && locales.includes(locale) ? locale : 'es';
+export default getRequestConfig(async ({ requestLocale }) => {
+  // `requestLocale` is a Promise in next-intl v4
+  let locale = await requestLocale;
+
+  // Fallback to default if locale is invalid or missing
+  if (!locale || !locales.includes(locale)) {
+    locale = defaultLocale;
+  }
 
   return {
-    locale: targetLocale,
-    messages: (await import(`./messages/${targetLocale}.json`)).default
+    locale,
+    messages: (await import(`./messages/${locale}.json`)).default,
   };
 });
