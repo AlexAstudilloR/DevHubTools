@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { TOOLS_DATA } from '@/lib/tools';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dev-hub-tools-two.vercel.app;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dev-hub-tools-two.vercel.app';
 
 const BLOG_POSTS = [
   'git-commands-junior-developers',

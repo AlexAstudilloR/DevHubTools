@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://devhubtools.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dev-hub-tools-two.vercel.app';
 
 export default function robots(): MetadataRoute.Robots {
   return {
