@@ -213,7 +213,7 @@ SELECT user_name, created_at FROM users
 WHERE is_active = true`}</code></pre>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">SCREAMING_SNAKE_CASE</h2>
-            <p>All uppercase with underscores. Reserved for constants that don't change:</p>
+            <p>All uppercase with underscores. Reserved for constants that don&apos;t change:</p>
             <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm"><code>{`// Configuration constants
 const MAX_RETRY_ATTEMPTS = 3;
 const API_BASE_URL = "https://api.example.com";
