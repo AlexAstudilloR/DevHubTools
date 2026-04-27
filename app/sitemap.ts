@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { MetadataRoute } from 'next';
 import { TOOLS_DATA } from '@/lib/tools';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://fast-dev-tools.vercel.app';
@@ -9,7 +9,7 @@ const BLOG_POSTS = [
   'variable-naming-standards',
 ];
 
-export async function GET() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const tools = TOOLS_DATA.map(tool => tool.id);
   const staticRoutes = [
     '',
@@ -24,39 +24,35 @@ export async function GET() {
 
   const locales = ['en', 'es'];
 
-  const urls = [
-    ...locales.flatMap(locale =>
-      staticRoutes.map(route => `${siteUrl}/${locale}${route}`)
-    ),
-    ...locales.flatMap(locale =>
-      tools.map(tool => `${siteUrl}/${locale}/tools/${tool}`)
-    ),
-    ...locales.flatMap(locale =>
-      BLOG_POSTS.map(slug => `${siteUrl}/${locale}/blog/${slug}`)
-    ),
-  ];
+  // Static pages
+  const routes = locales.flatMap((locale) =>
+    staticRoutes.map((route) => ({
+      url: `${siteUrl}/${locale}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: route === '' ? 1 : 0.8,
+    }))
+  );
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(url => `
-  <url>
-    <loc>${url}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-  </url>
-`).join('')}
-</urlset>`;
+  // Tool pages
+  const toolRoutes = locales.flatMap((locale) =>
+    tools.map((tool) => ({
+      url: `${siteUrl}/${locale}/tools/${tool}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    }))
+  );
 
-  return new NextResponse(xml, {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
-  });
-}
+  // Blog posts
+  const blogRoutes = locales.flatMap((locale) =>
+    BLOG_POSTS.map((slug) => ({
+      url: `${siteUrl}/${locale}/blog/${slug}`,
+      lastModified: new Date('2026-04-26'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  );
 
-export async function HEAD() {
-  return new NextResponse(null, {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
-  });
+  return [...routes, ...toolRoutes, ...blogRoutes];
 }
