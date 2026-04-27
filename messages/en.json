@@ -1,6 +1,6 @@
 {
   "Index": {
-    "title": "Welcome to DevTools Hub",
+    "title": "Welcome to FastDevTools",
     "description": "A collection of essential tools for developers, all running directly in your browser without sending data to any server.",
     "openTool": "Open tool",
     "searchPlaceholder": "Search tools...",
@@ -51,7 +51,7 @@
     "remove-duplicate-lines": { "name": "Remove Duplicates", "description": "Easily remove duplicate lines from a text." }
   },
   "Sidebar": {
-    "title": "DevTools Hub",
+    "title": "FastDevTools",
     "favorites": "My Favorites",
     "home": "Home",
     "about": "About Us",
@@ -83,7 +83,7 @@
     "terms": "Terms of Service",
     "cookies": "Cookies Policy",
     "privacyContent": "We collect information to provide better services to all our users. We do not sell your personal data to third parties. We use localStorage to save your preferences and favorite tools locally on your device.",
-    "termsContent": "By using DevTools Hub, you agree to these terms. The tools are provided 'as is' without warranty of any kind. You are responsible for how you use the generated data.",
+    "termsContent": "By using FastDevTools, you agree to these terms. The tools are provided 'as is' without warranty of any kind. You are responsible for how you use the generated data.",
     "cookiesContent": "We use cookies and similar technologies (like localStorage) to store your preferences and favorites. We also use third-party cookies (like Google Analytics and Google AdSense) to analyze traffic and show personalized ads."
   },
   "Cookies": {
@@ -94,11 +94,11 @@
   },
   "About": {
     "title": "About Us",
-    "welcome": "Welcome to DevTools Hub, your comprehensive destination for web development utilities.",
+    "welcome": "Welcome to FastDevTools, your comprehensive destination for web development utilities.",
     "mission": "Our Mission",
     "missionDesc": "To provide developers with high-quality, privacy-focused tools that run entirely in the browser. No data is ever sent to our servers.",
     "privacy": "Privacy First",
-    "whyChoose": "Why choose DevTools Hub?",
+    "whyChoose": "Why choose FastDevTools?",
     "fast": "Fast & Local:",
     "fastDesc": "Tools execute in your browser using JavaScript, ensuring maximum speed.",
     "offline": "Offline Ready:",

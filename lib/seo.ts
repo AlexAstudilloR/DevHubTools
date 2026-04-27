@@ -8,8 +8,8 @@ interface SEOProps {
   locale?: string;
 }
 
-const siteName = "DevTools Hub";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dev-hub-tools-two.vercel.app";
+const siteName = "FastDevTools";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fast-dev-tools.vercel.app/";
 
 export function constructMetadata({
   title,
@@ -24,8 +24,8 @@ export function constructMetadata({
       template: `%s | ${siteName}`,
     },
     description,
-    authors: [{ name: "DevTools Hub" }],
-    creator: "DevTools Hub",
+    authors: [{ name: "FastDevTools" }],
+    creator: "FastDevTools",
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: `${siteUrl}${url}`,
@@ -55,7 +55,12 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@devtools_hub",
+      creator: "@fastdevtools",
+    },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/favicon.ico",
     },
     robots: {
       index: true,

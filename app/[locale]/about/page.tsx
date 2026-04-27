@@ -7,7 +7,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   const t = await import(`@/messages/${locale}.json`).then(m => m.default.Sidebar);
   return constructMetadata({
     title: t.about,
-    description: "Learn more about DevTools Hub and our mission.",
+    description: "Learn more about FastDevTools and our mission.",
     url: "/about",
     locale
   });

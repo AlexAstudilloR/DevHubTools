@@ -1,6 +1,6 @@
 {
   "Index": {
-    "title": "Bienvenido a DevTools Hub",
+    "title": "Bienvenido a FastDevTools",
     "description": "Una colección de herramientas esenciales para desarrolladores, todo ejecutándose directamente en tu navegador sin enviar datos a ningún servidor.",
     "openTool": "Abrir herramienta",
     "searchPlaceholder": "Buscar herramientas...",
@@ -51,7 +51,7 @@
     "remove-duplicate-lines": { "name": "Eliminar Duplicados", "description": "Elimina fácilmente líneas duplicadas de un texto." }
   },
   "Sidebar": {
-    "title": "DevTools Hub",
+    "title": "FastDevTools",
     "favorites": "Mis Favoritos",
     "home": "Inicio",
     "about": "Sobre Nosotros",
@@ -83,7 +83,7 @@
     "terms": "Términos de Servicio",
     "cookies": "Política de Cookies",
     "privacyContent": "Recopilamos información para brindar mejores servicios a todos nuestros usuarios. No vendemos sus datos personales a terceros. Utilizamos localStorage para guardar sus preferencias y herramientas favoritas localmente en su dispositivo.",
-    "termsContent": "Al usar DevTools Hub, usted acepta estos términos. Las herramientas se proporcionan 'tal cual' sin garantía de ningún tipo. Usted es responsable de cómo utiliza los datos generados.",
+    "termsContent": "Al usar FastDevTools, usted acepta estos términos. Las herramientas se proporcionan 'tal cual' sin garantía de ningún tipo. Usted es responsable de cómo utiliza los datos generados.",
     "cookiesContent": "Utilizamos cookies y tecnologías similares (como localStorage) para almacenar sus preferencias y favoritos. También utilizamos cookies de terceros (como Google Analytics y Google AdSense) para analizar el tráfico y mostrar anuncios personalizados."
   },
   "Cookies": {
@@ -94,11 +94,11 @@
   },
   "About": {
     "title": "Sobre Nosotros",
-    "welcome": "Bienvenido a DevTools Hub, tu destino integral para utilidades de desarrollo web.",
+    "welcome": "Bienvenido a FastDevTools, tu destino integral para utilidades de desarrollo web.",
     "mission": "Nuestra Misión",
     "missionDesc": "Proporcionar a los desarrolladores herramientas de alta calidad y enfocadas en la privacidad que se ejecutan completamente en el navegador. No se envía ningún dato a nuestros servidores.",
     "privacy": "Privacidad Ante Todo",
-    "whyChoose": "¿Por qué elegir DevTools Hub?",
+    "whyChoose": "¿Por qué elegir FastDevTools?",
     "fast": "Rápido y Local:",
     "fastDesc": "Las herramientas se ejecutan en tu navegador usando JavaScript, garantizando la máxima velocidad.",
     "offline": "Listo para usar sin conexión:",

@@ -6,8 +6,8 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return constructMetadata({
     title: locale === "es"
-      ? "Buenas prácticas en el diseño de APIs REST – DevTools Hub"
-      : "Best Practices for REST API Design – DevTools Hub",
+      ? "Buenas prácticas en el diseño de APIs REST – FastDevTools"
+      : "Best Practices for REST API Design – FastDevTools",
     description: locale === "es"
       ? "Guía completa sobre principios y convenciones para diseñar APIs REST robustas."
       : "Comprehensive guide on principles and conventions for designing robust REST APIs.",

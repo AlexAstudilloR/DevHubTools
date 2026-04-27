@@ -8,7 +8,7 @@ import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return constructMetadata({
-    title: "Blog – DevTools Hub",
+    title: "Blog – FastDevTools",
     description: "Artículos y tutoriales sobre desarrollo web, buenas prácticas y herramientas para programadores.",
     url: "/blog",
     locale

@@ -29,7 +29,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   const t = await import(`@/messages/${locale}.json`).then(m => m.default.Sidebar);
   return constructMetadata({
     title: t.contact,
-    description: "Get in touch with the DevTools Hub team.",
+    description: "Get in touch with the FastDevTools team.",
     url: "/contact",
     locale
   });

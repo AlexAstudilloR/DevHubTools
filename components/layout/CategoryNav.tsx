@@ -25,7 +25,7 @@ export function CategoryNav() {
     TOOLS_DATA.filter(tool => subCats.includes(tool.category));
 
   return (
-    <nav className="flex items-center">
+    <nav className="flex items-center shrink-0">
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center space-x-1">
         {categories.map((bucket) => (
@@ -73,44 +73,56 @@ export function CategoryNav() {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="lg:hidden">
-        <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      <div className="lg:hidden flex items-center">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          onClick={() => {
+            console.log("Mobile menu clicked, current state:", mobileMenuOpen);
+            setMobileMenuOpen(!mobileMenuOpen);
+          }}
+          aria-label="Toggle Menu"
+          className={cn("relative z-[1001] h-10 w-10", mobileMenuOpen && "bg-accent")}
+        >
+          {mobileMenuOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6" />}
         </Button>
       </div>
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-16 bg-background z-40 lg:hidden overflow-y-auto border-t">
+        <div 
+          className="fixed inset-0 top-[64px] left-0 w-full h-[calc(100vh-64px)] bg-background z-[9999] lg:hidden overflow-y-auto border-t pointer-events-auto"
+          style={{ position: 'fixed', display: 'block', zIndex: 9999, backgroundColor: 'hsl(var(--background))' }}
+        >
           <div className="p-4 space-y-6 pb-20">
             <Link 
               href="/favorites" 
-              className="flex items-center gap-2 text-lg font-semibold border-b pb-2"
+              className="flex items-center gap-3 text-lg font-semibold border-b pb-4 text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Star className="h-5 w-5 fill-yellow-500 text-yellow-500" />
+              <Star className="h-5 w-5 fill-primary text-primary" />
               {tSidebar("favorites")}
             </Link>
 
             {categories.map((bucket) => (
               <div key={bucket.id} className="space-y-3">
-                <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest px-2">
                   {tCategories(bucket.id)}
                 </h3>
-                <div className="grid grid-cols-1 gap-2 pl-2">
+                <div className="grid grid-cols-1 gap-1">
                   {toolsByBucket(bucket.subCategories).map((tool) => {
                     const Icon = tool.icon;
                     return (
                       <Link 
                         key={tool.id} 
                         href={tool.href}
-                        className="flex items-center gap-3 py-2 text-base font-medium"
+                        className="flex items-center gap-4 p-3 rounded-xl hover:bg-primary/5 transition-colors active:bg-primary/10"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <div className="bg-muted p-2 rounded-md">
+                        <div className="bg-primary/10 p-2 rounded-lg text-primary">
                           <Icon className="h-5 w-5" />
                         </div>
-                        <span>{tTools(`${tool.id}.name`)}</span>
+                        <span className="font-medium">{tTools(`${tool.id}.name`)}</span>
                       </Link>
                     );
                   })}
@@ -118,14 +130,14 @@ export function CategoryNav() {
               </div>
             ))}
 
-            <div className="pt-4 border-t space-y-4">
-              <Link href="/blog" className="block text-lg font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <div className="pt-4 border-t grid grid-cols-2 gap-4">
+              <Link href="/blog" className="flex items-center justify-center p-3 rounded-lg bg-muted font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>
                 {tSidebar("blog")}
               </Link>
-              <Link href="/about" className="block text-lg font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/about" className="flex items-center justify-center p-3 rounded-lg bg-muted font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>
                 {tSidebar("about")}
               </Link>
-              <Link href="/contact" className="block text-lg font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/contact" className="flex items-center justify-center p-3 rounded-lg bg-muted font-medium text-sm col-span-2" onClick={() => setMobileMenuOpen(false)}>
                 {tSidebar("contact")}
               </Link>
             </div>

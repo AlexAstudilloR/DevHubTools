@@ -6,8 +6,8 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return constructMetadata({
     title: locale === "es"
-      ? "Comandos Git esenciales para desarrolladores Junior – DevTools Hub"
-      : "Essential Git Commands for Junior Developers – DevTools Hub",
+      ? "Comandos Git esenciales para desarrolladores Junior – FastDevTools"
+      : "Essential Git Commands for Junior Developers – FastDevTools",
     description: locale === "es"
       ? "Aprende los comandos de Git que todo desarrollador jr debe dominar."
       : "Learn the Git commands every junior developer must master.",

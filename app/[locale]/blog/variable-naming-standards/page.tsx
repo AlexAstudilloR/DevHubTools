@@ -6,8 +6,8 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   return constructMetadata({
     title: locale === "es"
-      ? "Estándares de nomenclatura de variables – DevTools Hub"
-      : "Variable Naming Standards: camelCase, snake_case and More – DevTools Hub",
+      ? "Estándares de nomenclatura de variables – FastDevTools"
+      : "Variable Naming Standards: camelCase, snake_case and More – FastDevTools",
     description: locale === "es"
       ? "Descubre los distintos estándares de nombrado de variables y cuándo usar cada uno."
       : "Discover the different variable naming standards and when to use each one.",

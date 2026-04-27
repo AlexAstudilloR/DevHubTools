@@ -43,7 +43,7 @@ export default function Home() {
     <div className="container mx-auto py-10 px-4 max-w-6xl">
       <div className="flex flex-col items-center text-center space-y-4 mb-10">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-foreground">
-          {t('title').split('DevTools Hub')[0]} <span className="text-primary">DevTools Hub</span>
+          {t('title').split('FastDevTools')[0]} <span className="text-primary">FastDevTools</span>
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
           {t('description')}

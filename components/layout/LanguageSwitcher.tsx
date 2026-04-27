@@ -23,11 +23,11 @@ export function LanguageSwitcher() {
   const cleanPath = getPathWithoutLocale(fullPathname);
 
   return (
-    <div className="flex items-center bg-muted rounded-lg p-1 border">
+    <div className="flex items-center bg-muted rounded-lg p-0.5 sm:p-1 border">
       <Link 
         href={`/es${cleanPath}`}
         className={cn(
-          "px-3 py-1.5 text-xs font-bold rounded-md transition-all",
+          "px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-md transition-all",
           locale === "es" ? "bg-background shadow-sm text-primary" : "text-muted-foreground hover:text-foreground"
         )}
       >
@@ -36,7 +36,7 @@ export function LanguageSwitcher() {
       <Link 
         href={`/en${cleanPath}`}
         className={cn(
-          "px-3 py-1.5 text-xs font-bold rounded-md transition-all",
+          "px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-md transition-all",
           locale === "en" ? "bg-background shadow-sm text-primary" : "text-muted-foreground hover:text-foreground"
         )}
       >
