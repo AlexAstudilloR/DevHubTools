@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { Search, X, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
-import { AdInline } from "@/components/ads/AdPlaceholders";
+// import { AdInline } from "@/components/ads/AdPlaceholders";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { TOOLS_DATA } from "@/lib/tools";
@@ -97,11 +97,6 @@ export default function Home() {
             const Icon = tool.icon;
             return (
               <React.Fragment key={tool.href}>
-                {index === 4 && selectedCategory === "all" && !searchQuery && (
-                  <div className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4">
-                     <AdInline />
-                  </div>
-                )}
                 <Link href={tool.href} className="block group">
                   <Card className="h-full transition-all hover:shadow-md hover:border-primary/50 cursor-pointer relative overflow-hidden">
                     <div className="absolute top-3 right-3 z-10">
