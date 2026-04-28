@@ -9,7 +9,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { CookieBanner } from "@/components/ui/CookieBanner";
-// import { AdStickyMobileFooter, AdBanner } from "@/components/ads/AdPlaceholders";
 import { constructMetadata } from "@/lib/seo";
 import { GA_TRACKING_ID } from "@/lib/analytics";
 import Script from "next/script";
@@ -71,7 +70,6 @@ export default async function RootLayout({
                 <FavoritesProvider>
                   <div className="flex flex-col min-h-screen">
                     <Header />
-                    {/* <AdBanner className="hidden md:flex" /> */}
                     <main className="flex-1 bg-muted/20 relative flex flex-col pb-12 md:pb-0">
                       <div className="flex-1">
                         {children}
@@ -80,7 +78,6 @@ export default async function RootLayout({
                     </main>
                   </div>
                   <CookieBanner />
-                  {/* <AdStickyMobileFooter /> */}
                 </FavoritesProvider>
               </ToastProvider>
             </ThemeProvider>

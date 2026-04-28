@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { Search, X, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
-// import { AdInline } from "@/components/ads/AdPlaceholders";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { TOOLS_DATA } from "@/lib/tools";
@@ -93,7 +92,7 @@ export default function Home() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredTools.map((tool, index) => {
+          {filteredTools.map((tool) => {
             const Icon = tool.icon;
             return (
               <React.Fragment key={tool.href}>
