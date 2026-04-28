@@ -11,6 +11,8 @@ const BLOG_POSTS = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const tools = TOOLS_DATA.map(tool => tool.id);
+  const locales = ['es', 'en'] as const;
+  
   const staticRoutes = [
     '',
     '/favorites',
@@ -22,37 +24,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
   ];
 
-  const locales = ['en', 'es'];
+  const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  // Static pages
-  const routes = locales.flatMap((locale) =>
-    staticRoutes.map((route) => ({
-      url: `${siteUrl}/${locale}${route}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: route === '' ? 1 : 0.8,
-    }))
-  );
+  // Rutas estáticas
+  staticRoutes.forEach(route => {
+    locales.forEach(locale => {
+      sitemapEntries.push({
+        url: `${siteUrl}/${locale}${route}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: route === '' ? 1.0 : 0.8,
+      });
+    });
+  });
 
-  // Tool pages
-  const toolRoutes = locales.flatMap((locale) =>
-    tools.map((tool) => ({
-      url: `${siteUrl}/${locale}/tools/${tool}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    }))
-  );
+  // Herramientas
+  tools.forEach(tool => {
+    locales.forEach(locale => {
+      sitemapEntries.push({
+        url: `${siteUrl}/${locale}/tools/${tool}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.9,
+      });
+    });
+  });
 
-  // Blog posts
-  const blogRoutes = locales.flatMap((locale) =>
-    BLOG_POSTS.map((slug) => ({
-      url: `${siteUrl}/${locale}/blog/${slug}`,
-      lastModified: new Date('2026-04-26'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }))
-  );
+  // Blog
+  BLOG_POSTS.forEach(slug => {
+    locales.forEach(locale => {
+      sitemapEntries.push({
+        url: `${siteUrl}/${locale}/blog/${slug}`,
+        lastModified: new Date('2026-04-26'),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    });
+  });
 
-  return [...routes, ...toolRoutes, ...blogRoutes];
+  return sitemapEntries;
 }
