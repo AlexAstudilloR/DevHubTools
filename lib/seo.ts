@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const siteName = "FastDevTools";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dev-hub-tools-two.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fast-dev-tools.vercel.app";
 
 export function constructMetadata({
   title,
